@@ -1,0 +1,47 @@
+criar ambiente virtual (python3 -m venv ./env)
+
+ativar ambiente virtual (source ./env/bin/activate)
+
+instalar flask (pip install flask)
+
+verificar versão flask(python -m flask --version)
+
+guardar as dependências (pip freeze > requeriments.txt)
+
+criou arquivo do servidor (app.py)
+
+criou uma rota "/" index
+
+digitar o comando (set FLASK_APP = app.py) para exportar
+
+subir o servidor (flask run)
+
+criar um documento  HTML (usar como template)
+
+renderizar o template
+
+templates ou rotas dinâmicas
+
+instalar  uma dependência (pip install flask-wtf)
+
+atualizar o requeriments.txtimportou as dependências 
+
+criou uma classe de formulário
+
+devolveu dados recebidos pelo formulário no template
+
+refactor do formulário
+
+refactor das configurações 
+
+instalamos o pacote de migrações (pip install flask-Migrate)
+
+instalamos o pacote de orm (pip install flask_sqlalchemy )
+
+criamos o model de usuário com o serializador (User)
+
+flask  db init (cria pasta de migrações)
+
+flask  db migrate  (iserção da tabela users)
+
+flask db upgrade (para aplicar no banco de dados)

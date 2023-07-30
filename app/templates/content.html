@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="nome" placeholder="nome"  required>
+                            <input class="form-control" type="text" name="telefone" placeholder="telefone" required>
+                            <input class="form-control" type="text" name="endereco" placeholder="endereco" required>
+                            <input class="form-control" type="text" name="cpf" placeholder="cpf" required>
+                        </div>
+                        
+                        <button class="btn btn-primary" type="submit">
+                            Add
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>CPF</th>
+                    <th>Operations</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.id }}</td>
+                    <td><strong>{{ entry.nome }}</strong></td>
+                    <td>{{ entry.telefone }}</td>
+                    <td>{{ entry.endereco }}</td>
+                    <td>{{ entry.cpf }}</td>
+
+                    <td>
+                        <a class="{{ 'btn btn-success' if entry.id else 'btn btn-dark'}}"
+                           href="/turn/{{ entry.id }}">
+                            Read
+                        </a>
+                        <a class="btn btn-danger"
+                           href="/delete/{{ entry.id }}">
+                            Delete
+                        </a>
+                        <a class="btn btn-info"
+                           href="/update/{{ entry.id }}">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
