@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/{{ entry.id }}" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="nome" placeholder="nome" value="{{ entry.nome }}" required>
+                            <input class="form-control" type="text" name="telefone" placeholder="telefone" value="{{ entry.telefone}}" required>
+                            <input class="form-control" type="text" name="endereco" placeholder="endereco" value="{{ entry.endereco }}" required>
+                            <input class="form-control" type="text" name="cpf" placeholder="cpf" value="{{ entry.cpf }}" required>
+                        </div>
+                        
+                        <button class="btn btn-primary" type="submit">
+                            Update
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
